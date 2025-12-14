@@ -1,3 +1,4 @@
+// src/components/Profile.jsx
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
 
@@ -10,7 +11,7 @@ function Profile() {
         <Link to="settings">Settings</Link>
       </nav>
       <hr />
-      <Outlet /> {/* Nested routes سيظهر محتواها هنا */}
+      <Outlet /> {/* هنا ستظهر المكونات الفرعية */}
     </div>
   );
 }
