@@ -6,9 +6,12 @@ function Profile() {
     <div>
       <h1>Profile Page</h1>
       <nav>
-        <Link to="details">Details</Link> | <Link to="settings">Settings</Link>
+        <Link to="details" style={{ marginRight: "10px" }}>Details</Link>
+        <Link to="settings">Settings</Link>
       </nav>
-      <Outlet /> {/* سيعرض Nested Routes هنا */}
+      <hr />
+      {/* Nested routes سيظهر محتواها هنا */}
+      <Outlet />
     </div>
   );
 }
