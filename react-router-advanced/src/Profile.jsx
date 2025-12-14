@@ -10,8 +10,7 @@ function Profile() {
         <Link to="settings">Settings</Link>
       </nav>
       <hr />
-      {/* Nested routes سيظهر محتواها هنا */}
-      <Outlet />
+      <Outlet /> {/* Nested routes سيظهر محتواها هنا */}
     </div>
   );
 }
