@@ -9,39 +9,35 @@ function formikForm() {
   });
 
   return (
-    <div>
-      <h2>User Registration (Formik)</h2>
+    <Formik
+      initialValues={{ username: "", email: "", password: "" }}
+      validationSchema={validationSchema}
+      onSubmit={(values) => {
+        console.log(values);
+      }}
+    >
+      <Form>
+        <div>
+          <label>Username</label>
+          <Field name="username" />
+          <ErrorMessage name="username" />
+        </div>
 
-      <Formik
-        initialValues={{ username: "", email: "", password: "" }}
-        validationSchema={validationSchema}
-        onSubmit={(values) => {
-          console.log(values);
-        }}
-      >
-        <Form>
-          <div>
-            <label>Username:</label>
-            <Field name="username" type="text" />
-            <ErrorMessage name="username" component="div" />
-          </div>
+        <div>
+          <label>Email</label>
+          <Field name="email" type="email" />
+          <ErrorMessage name="email" />
+        </div>
 
-          <div>
-            <label>Email:</label>
-            <Field name="email" type="email" />
-            <ErrorMessage name="email" component="div" />
-          </div>
+        <div>
+          <label>Password</label>
+          <Field name="password" type="password" />
+          <ErrorMessage name="password" />
+        </div>
 
-          <div>
-            <label>Password:</label>
-            <Field name="password" type="password" />
-            <ErrorMessage name="password" component="div" />
-          </div>
-
-          <button type="submit">Register</button>
-        </Form>
-      </Formik>
-    </div>
+        <button type="submit">Register</button>
+      </Form>
+    </Formik>
   );
 }
 
