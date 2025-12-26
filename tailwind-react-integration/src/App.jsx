@@ -2,6 +2,14 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
+import UserProfile from "./components/UserProfile";
+
+function App() {
+  return <UserProfile />;
+}
+
+export default App;
+
 
 function App() {
   return (
