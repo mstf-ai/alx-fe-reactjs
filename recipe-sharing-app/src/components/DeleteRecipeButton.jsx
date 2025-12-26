@@ -9,7 +9,14 @@ const DeleteRecipeButton = ({ recipeId }) => {
     }
   };
 
-  return <button onClick={handleDelete} style={{ marginTop: '10px' }}>Delete Recipe</button>;
+  return (
+    <button
+      onClick={handleDelete}
+      style={{ display: 'block', marginTop: '10px', backgroundColor: 'red', color: 'white' }}
+    >
+      Delete Recipe
+    </button>
+  );
 };
 
 export default DeleteRecipeButton;

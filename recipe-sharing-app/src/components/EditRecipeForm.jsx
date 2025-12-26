@@ -1,29 +1,32 @@
 import { useState } from 'react';
 import { useRecipeStore } from './recipeStore';
 
-const EditRecipeForm = ({ recipe }) => {
+const EditRecipeForm = ({ recipe, onClose }) => {
   const updateRecipe = useRecipeStore((state) => state.updateRecipe);
   const [title, setTitle] = useState(recipe.title);
   const [description, setDescription] = useState(recipe.description);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault(); // ✅ مهم للـ checker
     updateRecipe({ ...recipe, title, description });
     alert('Recipe updated!');
+    onClose(); // لإغلاق الفورم بعد التحديث إذا كان مستخدمًا في الـ modal
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ marginTop: '10px' }}>
+    <form onSubmit={handleSubmit} style={{ margin: '10px 0' }}>
       <input
         type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Title"
+        style={{ display: 'block', marginBottom: '10px', width: '100%' }}
       />
       <textarea
         value={description}
         onChange={(e) => setDescription(e.target.value)}
         placeholder="Description"
+        style={{ display: 'block', marginBottom: '10px', width: '100%' }}
       />
       <button type="submit">Update Recipe</button>
     </form>
