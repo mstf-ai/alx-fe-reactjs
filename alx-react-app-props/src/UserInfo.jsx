@@ -1,5 +1,7 @@
+import UserDetails from "./UserDetails";
+
 function UserInfo() {
-  return null;
+  return <UserDetails />;
 }
 
 export default UserInfo;
