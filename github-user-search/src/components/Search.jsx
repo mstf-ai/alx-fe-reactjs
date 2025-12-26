@@ -1,55 +1,58 @@
 import { useState } from "react";
-import { fetchUserData } from "../services/githubService";
 
-const Search = () => {
+function Search({ onSearch }) {
   const [username, setUsername] = useState("");
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
-    setError(false);
-    setUser(null);
 
-    try {
-      const data = await fetchUserData(username);
-      setUser(data);
-    } catch (err) {
-      setError(true);
-    } finally {
-      setLoading(false);
-    }
+    if (!username.trim()) return;
+
+    onSearch(username.trim());
+    setUsername("");
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="w-full max-w-md mx-auto mt-10">
+      <form
+        onSubmit={handleSubmit}
+        className="flex items-center gap-2 bg-white p-4 rounded-xl shadow-md"
+      >
         <input
           type="text"
-          placeholder="Enter GitHub username"
+          placeholder="Enter GitHub username..."
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          className="
+            flex-1
+            px-4
+            py-2
+            border
+            border-gray-300
+            rounded-lg
+            focus:outline-none
+            focus:ring-2
+            focus:ring-black
+          "
         />
-        <button type="submit">Search</button>
+
+        <button
+          type="submit"
+          className="
+            px-5
+            py-2
+            bg-black
+            text-white
+            rounded-lg
+            hover:bg-gray-800
+            transition
+          "
+        >
+          Search
+        </button>
       </form>
-
-      {loading && <p>Loading...</p>}
-
-      {error && <p>Looks like we cant find the user</p>}
-
-      {user && (
-        <div>
-          <img src={user.avatar_url} alt={user.login} width="100" />
-          <h3>{user.login}</h3>
-          <a href={user.html_url} target="_blank" rel="noreferrer">
-            View Profile
-          </a>
-        </div>
-      )}
     </div>
   );
-};
+}
 
 export default Search;

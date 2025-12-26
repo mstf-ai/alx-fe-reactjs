@@ -1,10 +1,13 @@
 import Search from "./components/Search";
 
 function App() {
+  const handleSearch = (username) => {
+    console.log("Searching for:", username);
+  };
+
   return (
-    <div>
-      <h1>GitHub User Search</h1>
-      <Search />
+    <div className="min-h-screen bg-gray-100">
+      <Search onSearch={handleSearch} />
     </div>
   );
 }
