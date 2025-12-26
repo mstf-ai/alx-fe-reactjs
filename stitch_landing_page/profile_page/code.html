@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profile Page</title>
+<!-- Fonts and Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2430",
+                        "text-main-light": "#0d131b",
+                        "text-main-dark": "#ffffff",
+                        "text-secondary-light": "#4c6c9a",
+                        "text-secondary-dark": "#94a3b8",
+                        "border-light": "#e7ecf3",
+                        "border-dark": "#2d3748",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                    boxShadow: {
+                        'soft': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased min-h-screen">
+<!-- Mobile Container -->
+<div class="mx-auto max-w-md bg-background-light dark:bg-background-dark min-h-screen flex flex-col relative">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-border-light/50 dark:border-border-dark/50">
+<div class="flex items-center p-4 h-16 justify-between">
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors text-text-main-light dark:text-text-main-dark">
+<span class="material-symbols-outlined !text-[24px]">arrow_back_ios_new</span>
+</button>
+<h2 class="text-text-main-light dark:text-text-main-dark text-lg font-bold leading-tight tracking-tight flex-1 text-center">Profile</h2>
+<div class="size-10 shrink-0"></div> <!-- Spacer for optical centering -->
+</div>
+</header>
+<!-- Main Content Scrollable Area -->
+<main class="flex-1 overflow-y-auto px-4 pb-8">
+<!-- Profile Header Section -->
+<div class="flex flex-col gap-6 items-center pt-6 pb-8">
+<div class="flex flex-col items-center gap-4">
+<div class="relative group">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-28 w-28 ring-4 ring-surface-light dark:ring-surface-dark shadow-lg" data-alt="Professional portrait of a user with a blurred office background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCSa56Kg1MhTf9zlsqPiDD6pqXRTnI4zB6OSGidQNNYF7Xw8x9qTyfwjyi5I2wkJagxenzFxrPWH3LChUedAX-86ORXik0-qYJPWouMzeFiuLWV6bpyExu1tIGJmqwHl_DD_FmR_HRQHWPqvPYQZpkwI6LC4uOIUemOlIkNeuA_o0R646M5VRuSIWnNqYqeTLlDf7BI7It3R18CrZs_ySl_puF1CZKby4a3AAHy5DVys1AESoPhziaEKkR2Rv9w3C02GND-sa9mAeli");'>
+</div>
+<div class="absolute bottom-0 right-0 bg-green-500 w-6 h-6 rounded-full border-4 border-background-light dark:border-background-dark" title="Online"></div>
+</div>
+<div class="flex flex-col items-center justify-center text-center">
+<h1 class="text-text-main-light dark:text-text-main-dark text-2xl font-bold tracking-tight">Alex Johnson</h1>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm mt-1 font-medium">alex.johnson@example.com</p>
+<div class="mt-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary">
+                            Pro Member
+                        </div>
+</div>
+</div>
+<button class="flex w-full items-center justify-center rounded-xl h-12 px-6 bg-primary hover:bg-blue-600 active:bg-blue-700 text-white text-sm font-semibold tracking-wide transition-all shadow-md shadow-primary/20">
+                    Edit Profile
+                </button>
+</div>
+<!-- Settings Group -->
+<div class="flex flex-col gap-3">
+<h3 class="text-xs font-semibold text-text-secondary-light dark:text-text-secondary-dark uppercase tracking-wider pl-2 mb-1">General</h3>
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl shadow-soft overflow-hidden">
+<!-- List Item 1 -->
+<button class="w-full group">
+<div class="flex items-center gap-4 px-4 py-4 justify-between transition-colors hover:bg-black/[0.02] dark:hover:bg-white/[0.02]">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center rounded-xl bg-primary/10 dark:bg-primary/20 shrink-0 size-10 text-primary">
+<span class="material-symbols-outlined !text-[22px]">account_circle</span>
+</div>
+<p class="text-text-main-light dark:text-text-main-dark text-[15px] font-medium leading-normal text-left flex-1 truncate">Account Settings</p>
+</div>
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark/50 !text-[20px]">chevron_right</span>
+</div>
+</button>
+<div class="h-px bg-border-light dark:bg-border-dark mx-4"></div>
+<!-- List Item 2 -->
+<button class="w-full group">
+<div class="flex items-center gap-4 px-4 py-4 justify-between transition-colors hover:bg-black/[0.02] dark:hover:bg-white/[0.02]">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center rounded-xl bg-orange-500/10 dark:bg-orange-500/20 shrink-0 size-10 text-orange-600 dark:text-orange-400">
+<span class="material-symbols-outlined !text-[22px]">notifications</span>
+</div>
+<p class="text-text-main-light dark:text-text-main-dark text-[15px] font-medium leading-normal text-left flex-1 truncate">Notifications</p>
+</div>
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark/50 !text-[20px]">chevron_right</span>
+</div>
+</button>
+<div class="h-px bg-border-light dark:bg-border-dark mx-4"></div>
+<!-- List Item 3 -->
+<button class="w-full group">
+<div class="flex items-center gap-4 px-4 py-4 justify-between transition-colors hover:bg-black/[0.02] dark:hover:bg-white/[0.02]">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center rounded-xl bg-green-500/10 dark:bg-green-500/20 shrink-0 size-10 text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined !text-[22px]">verified_user</span>
+</div>
+<p class="text-text-main-light dark:text-text-main-dark text-[15px] font-medium leading-normal text-left flex-1 truncate">Privacy &amp; Security</p>
+</div>
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark/50 !text-[20px]">chevron_right</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Spacer -->
+<div class="h-6"></div>
+<!-- Other Settings Group -->
+<div class="flex flex-col gap-3">
+<h3 class="text-xs font-semibold text-text-secondary-light dark:text-text-secondary-dark uppercase tracking-wider pl-2 mb-1">Preferences</h3>
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl shadow-soft overflow-hidden">
+<!-- List Item 4 -->
+<button class="w-full group">
+<div class="flex items-center gap-4 px-4 py-4 justify-between transition-colors hover:bg-black/[0.02] dark:hover:bg-white/[0.02]">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center rounded-xl bg-purple-500/10 dark:bg-purple-500/20 shrink-0 size-10 text-purple-600 dark:text-purple-400">
+<span class="material-symbols-outlined !text-[22px]">palette</span>
+</div>
+<p class="text-text-main-light dark:text-text-main-dark text-[15px] font-medium leading-normal text-left flex-1 truncate">Appearance</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-medium text-text-secondary-light dark:text-text-secondary-dark">System</span>
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark/50 !text-[20px]">chevron_right</span>
+</div>
+</div>
+</button>
+<div class="h-px bg-border-light dark:bg-border-dark mx-4"></div>
+<!-- List Item 5 -->
+<button class="w-full group">
+<div class="flex items-center gap-4 px-4 py-4 justify-between transition-colors hover:bg-black/[0.02] dark:hover:bg-white/[0.02]">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center rounded-xl bg-gray-500/10 dark:bg-gray-500/20 shrink-0 size-10 text-gray-600 dark:text-gray-400">
+<span class="material-symbols-outlined !text-[22px]">help</span>
+</div>
+<p class="text-text-main-light dark:text-text-main-dark text-[15px] font-medium leading-normal text-left flex-1 truncate">Help &amp; Support</p>
+</div>
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark/50 !text-[20px]">chevron_right</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Logout Section -->
+<div class="mt-8 flex flex-col items-center gap-4">
+<button class="w-full flex items-center justify-center gap-2 rounded-xl h-12 px-6 border border-red-200 dark:border-red-900/30 bg-surface-light dark:bg-surface-dark text-red-600 dark:text-red-400 text-[15px] font-semibold tracking-wide hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors shadow-soft">
+<span class="material-symbols-outlined !text-[20px]">logout</span>
+                    Log Out
+                </button>
+<p class="text-xs text-text-secondary-light/60 dark:text-text-secondary-dark/40 font-medium">
+                    Version 1.0.4 (Build 240)
+                </p>
+</div>
+<div class="h-6"></div> <!-- Bottom safe area spacing -->
+</main>
+<!-- Bottom Navigation (Optional but fits context) -->
+<nav class="sticky bottom-0 z-50 bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-lg border-t border-border-light dark:border-border-dark pb-safe">
+<div class="flex justify-around items-center h-[60px] px-2">
+<button class="flex flex-col items-center justify-center w-full h-full gap-1 text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined !text-[24px]">dashboard</span>
+<span class="text-[10px] font-medium">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full gap-1 text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined !text-[24px]">analytics</span>
+<span class="text-[10px] font-medium">Stats</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full gap-1 text-primary dark:text-primary transition-colors">
+<span class="material-symbols-outlined !text-[24px] fill-current">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</button>
+</div>
+<!-- Simulating iOS Home Indicator Safe Area -->
+<div class="h-5 w-full"></div>
+</nav>
+</div>
+</body></html>
