@@ -5,6 +5,7 @@ import Profile from "./components/Profile";
 import BlogPost from "./components/BlogPost";
 import NotFound from "./components/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   const isAuthenticated = true; // مؤقت للتجربة
@@ -12,6 +13,15 @@ function App() {
   return (
     <Router>
       <Routes>
+	// داخل Routes
+	<Route
+  	path="/profile/*"
+  	element={
+  	  <ProtectedRoute isAuthenticated={true /* أو false للتجربة */}>
+      	<Profile />
+    	</ProtectedRoute>
+  	}
+	/>
         <Route path="/" element={<Home />} />
         
         {/* Protected and nested route */}
