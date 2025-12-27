@@ -8,10 +8,7 @@ function TodoList() {
   ]);
 
   const addTodo = (text) => {
-    setTodos([
-      ...todos,
-      { id: Date.now(), text, completed: false },
-    ]);
+    setTodos([...todos, { id: Date.now(), text, completed: false }]);
   };
 
   const toggleTodo = (id) => {
@@ -31,9 +28,7 @@ function TodoList() {
   return (
     <div>
       <h1>Todo List</h1>
-
       <AddTodoForm onAdd={addTodo} />
-
       <ul>
         {todos.map((todo) => (
           <li
