@@ -17,7 +17,7 @@ test("adds a new todo", () => {
   expect(screen.getByText("New Todo")).toBeInTheDocument();
 });
 
-test("toggles todo completion", () => {
+test("toggles a todo", () => {
   render(<TodoList />);
   const todo = screen.getByText("Learn React");
   fireEvent.click(todo);
@@ -26,7 +26,8 @@ test("toggles todo completion", () => {
 
 test("deletes a todo", () => {
   render(<TodoList />);
-  const deleteButtons = screen.getAllByText("Delete");
-  fireEvent.click(deleteButtons[0]);
-  expect(screen.queryByText("Learn React")).not.toBeInTheDocument();
+  fireEvent.click(screen.getAllByText("Delete")[0]);
+  expect(
+    screen.queryByText("Learn React")
+  ).not.toBeInTheDocument();
 });
